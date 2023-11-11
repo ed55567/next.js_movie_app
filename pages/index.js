@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import Search from '../components/Search';
 import axios from 'axios';
+import Movie from '../components/Movie';
 import styles from '../styles.module.css'; // Import the CSS module
 
 const IMAGE_BASE_URL = 'https://image.tmdb.org/t/p/w500'; // Adjust the size as needed
@@ -41,33 +42,11 @@ const Home = () => {
     <div className={styles.container}>
       <h1>Movie Search App</h1>
       <Search onSearch={handleSearch} />
-      <ul>
+      <div>
         {movies.map((movie) => (
-          <li key={movie.id} className={styles.movieCard}>
-            <h2>{movie.title}</h2>
-            <img
-              src={`${IMAGE_BASE_URL}${movie.poster_path}`}
-              alt={`${movie.title} Poster`}
-              className={styles.poster}
-            />
-            <p>Release Date: {movie.release_date}</p>
-            <p>Ratings: {movie.vote_average}</p>
-            <p>Description: {movie.overview}</p>
-            {movie.reviews && movie.reviews.length > 0 && (
-              <div>
-                <h3>Reviews:</h3>
-                <ul>
-                  {movie.reviews.map((review) => (
-                    <li key={review.id}>
-                      <p>{review.content}</p>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
-          </li>
+          <Movie key={movie.id} {...movie} />
         ))}
-      </ul>
+      </div>
     </div>
   );
 };
