@@ -1,58 +1,95 @@
 /* styles.module.css */
+/* Global variables without :root */
+.global {
+  --primary-font: 'Arial', sans-serif;
+  --primary-bg-color: #f5f5f5;
+  --container-max-width: 800px;
+  --container-padding: 20px;
+  --list-item-margin-bottom: 20px;
+  --list-item-padding: 15px;
+  --list-item-bg-color: #fff;
+  --list-item-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  --heading-color: #333;
+  --text-color: #555;
+}
+
 .body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #624d4d;
-  }
-  
+  font-family: var(--primary-font);
+  margin: 0;
+  padding: 0;
+  background-color: var(--primary-bg-color);
+}
+
+.container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: var(--container-padding);
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.h1 {
+  color: var(--heading-color);
+}
+
+
+
+.movieCard {
+  margin-bottom: var(--list-item-margin-bottom);
+  padding: var(--list-item-padding);
+  background-color: var(--list-item-bg-color);
+  box-shadow: var(--list-item-box-shadow);
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.movieTitle {
+  color: #333;
+  text-align: center;
+}
+
+.h2 {
+  color: var(--heading-color);
+  text-align: center;
+}
+
+.poster {
+  max-width: 25%;
+  border-radius: 10px;
+  height: auto;
+  margin-bottom: 10px;
+  display: block;
+  margin: 0 auto; /* Center the image horizontally */
+}
+
+.movieReleaseDate {
+  color: #555;
+}
+
+.movieSummaryTitle {
+  color: #333;
+  text-align: center;
+}
+
+.movieDescription {
+  color: #555;
+}
+
+
+.p {
+  color: var(--text-color);
+}
+
+
+
+/* Responsive Styles */
+@media (max-width: 768px) {
   .container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
+    padding: 10px;
   }
-  
-  .h1 {
-    color: #333;
-    text-align: center;
+
+  .movieCard {
+    padding: 10px;
   }
-  
-  .ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .li {
-    margin-bottom: 20px;
-    padding: 15px;
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .h2 {
-    color: #333;
-  }
-  
-  .img {
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 10px;
-    display: block; /* Remove default inline styling */
-    margin: 0 auto; /* Center the image horizontally */
-  }
-  
-  .p {
-    color: #555;
-  }
-  
-  /* Responsive Styles */
-  @media (max-width: 768px) {
-    .container {
-      padding: 10px;
-    }
-  
-    .li {
-      padding: 10px;
-    }
-  }
-  
+}
