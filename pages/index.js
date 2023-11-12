@@ -3,9 +3,9 @@ import { useState, useEffect } from 'react';
 import Search from '../components/Search';
 import axios from 'axios';
 import Movie from '../components/Movie';
-import styles from '../styles.module.css'; // Import the CSS module
+import styles from '../styles.module.css'; 
 
-const IMAGE_BASE_URL = 'https://image.tmdb.org/t/p/w500'; // Adjust the size as needed
+const IMAGE_BASE_URL = 'https://image.tmdb.org/t/p/w500'; 
 const API_KEY = process.env.NEXT_PUBLIC_TMDB_API_KEY;
 
 const Home = () => {
